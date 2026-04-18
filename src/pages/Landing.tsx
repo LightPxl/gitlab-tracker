@@ -3,6 +3,8 @@ import { ArrowRight, BarChart3, Command, GitBranch, ShieldCheck, Sparkles, Zap }
 import { Link } from "react-router-dom";
 import { useCallback } from "react";
 
+const logoUrl = `${import.meta.env.BASE_URL}logo.jpg`;
+
 const heroStats = [
   { label: "Pipeline success", value: "99.2%" },
   { label: "Deployments tracked", value: "14.8k" },
@@ -154,14 +156,10 @@ function ProductPreview() {
   );
 }
 export default function Landing() {
-  // Smooth scroll handler for header links
-  const handleScroll = useCallback((e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    e.preventDefault();
-    // Only update the hash, do not navigate to a route
-    window.location.hash = `#${sectionId}`;
+  const handleScroll = useCallback((sectionId: string) => {
     const el = document.getElementById(sectionId);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, []);
 
@@ -181,7 +179,7 @@ export default function Landing() {
           <div className="linear-surface flex items-center justify-between rounded-full px-4 py-3">
             <Link to="/landing" className="flex items-center gap-3">
               <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-white shadow-[0_0_30px_rgba(111,91,255,0.15)] overflow-hidden">
-                <img src="/logo.jpg" alt="Logo" className="h-8 w-8 object-contain" />
+                <img src={logoUrl} alt="Logo" className="h-8 w-8 object-contain" />
               </div>
               <div>
                 <p className="text-sm font-semibold text-white">LightPxl</p>
@@ -190,9 +188,9 @@ export default function Landing() {
             </Link>
 
             <div className="hidden items-center gap-8 text-sm text-white/58 md:flex">
-              <a href="#product" className="transition-colors hover:text-white" onClick={e => handleScroll(e, "product")}>Product</a>
-              <a href="#features" className="transition-colors hover:text-white" onClick={e => handleScroll(e, "features")}>Features</a>
-              <a href="#overview" className="transition-colors hover:text-white" onClick={e => handleScroll(e, "overview")}>Overview</a>
+              <button type="button" className="transition-colors hover:text-white" onClick={() => handleScroll("product")}>Product</button>
+              <button type="button" className="transition-colors hover:text-white" onClick={() => handleScroll("features")}>Features</button>
+              <button type="button" className="transition-colors hover:text-white" onClick={() => handleScroll("overview")}>Overview</button>
             </div>
 
             <div className="flex items-center gap-3">

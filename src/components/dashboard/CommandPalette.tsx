@@ -61,7 +61,7 @@ export function CommandPalette() {
             <CommandList>
                 <CommandEmpty>No results found.</CommandEmpty>
                 <CommandGroup heading="Suggestions">
-                    <CommandItem onSelect={() => runCommand(() => navigate("/"))}>
+                    <CommandItem onSelect={() => runCommand(() => navigate("/dashboard"))}>
                         <LayoutDashboard className="mr-2 h-4 w-4" />
                         <span>Dashboard Overview</span>
                     </CommandItem>

@@ -60,7 +60,7 @@ interface DashboardLayoutProps {
 }
 
 const navigation = [
-  { name: 'Overview', href: '/', icon: LayoutDashboard },
+  { name: 'Overview', href: '/dashboard', icon: LayoutDashboard },
   { name: 'Developers', href: '/developers', icon: Users },
   { name: 'Projects', href: '/projects', icon: FolderKanban },
   { name: 'Groups', href: '/groups', icon: FolderTree },

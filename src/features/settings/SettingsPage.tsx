@@ -47,7 +47,7 @@ export default function SettingsPage() {
             if (isValid) {
                 setIsConnected(true);
                 toast.success('Successfully connected to GitLab');
-                navigate('/');
+                navigate('/dashboard');
             } else {
                 throw new Error('Invalid Token');
             }
