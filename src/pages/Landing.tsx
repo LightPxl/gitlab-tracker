@@ -159,6 +159,8 @@ function ProductPreview() {
   // Smooth scroll handler for header links
   const handleScroll = useCallback((e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
+    // Only update the hash, do not navigate to a route
+    window.location.hash = `#${sectionId}`;
     const el = document.getElementById(sectionId);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
