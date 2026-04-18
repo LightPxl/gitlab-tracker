@@ -8,7 +8,6 @@ import { lazy, Suspense } from "react";
 import { DashboardLayout } from "./components/layout/DashboardLayout";
 
 // Lazy Load Pages
-const Landing = lazy(() => import("./pages/Landing"));
 const Dashboard = lazy(() => import("./features/dashboard/DashboardPage"));
 const ProjectsPage = lazy(() => import("./features/projects/ProjectsPage"));
 const PipelinePage = lazy(() => import("./features/pipelines/PipelinesPage"));
@@ -46,7 +45,7 @@ const App = () => (
         <HashRouter>
           <Suspense fallback={<PageLoader />}>
             <Routes>
-              <Route path="/" element={<Landing />} />
+              <Route path="/" element={<Dashboard />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/pipelines" element={<PipelinePage />} />
