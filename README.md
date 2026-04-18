@@ -1,35 +1,59 @@
 
+
 # LightPxl GitLab Tracker
 
-
-A modern, high-performance GitLab analytics dashboard for engineering teams. Built with React, Vite, TypeScript, and Tailwind CSS. 
-
-## Features
-- Dynamic GitLab connection (bring your own PAT, URL, and group)
-- DORA metrics, velocity, and developer analytics
-- Clean, Linear-inspired UI
-- Responsive, fast, and ready for portfolio/demo
-
-## Getting Started
-1. Clone the repo
-2. Install dependencies: `npm install`
-3. Create a `.env` file (see below)
-4. Run: `npm run dev`
-
-### .env Example
-```
-VITE_GITLAB_URL=https://gitlab.com
-VITE_GITLAB_GROUP_ID=52
-```
-
-## Deployment
-- Remove any personal tokens or secrets before publishing
-- Add a LICENSE file (MIT recommended)
-- Push to GitHub and enable GitHub Pages or Vercel/Netlify for live demo
-
-## License
-MIT (add LICENSE file)
+> Effortless, beautiful analytics for your GitLab teams. DORA metrics, velocity, and developer insights in a Linear-inspired dashboard.
 
 ---
 
-© 2026 Your Name. All rights reserved.
+## 🚀 Features
+
+- **Dynamic GitLab Connection**: Connect with your own Personal Access Token, custom URL, and group.
+- **DORA Metrics**: Track deployment frequency, lead time, change failure rate, and MTTR.
+- **Velocity & Insights**: Visualize team velocity, issue flow, and developer impact.
+- **Modern UI**: Clean, minimal, and responsive—Linear-inspired for clarity and speed.
+- **Fast & Secure**: Built with React, Vite, TypeScript, and Tailwind CSS.
+
+---
+
+## 🛠️ Getting Started
+
+1. **Clone the repo:**
+	```sh
+	git clone https://github.com/LightPxl/gitlab-tracker.git
+	cd gitlab-tracker
+	```
+2. **Install dependencies:**
+	```sh
+	npm install
+	```
+3. **Configure environment:**
+	Create a `.env` file:
+	```env
+	VITE_GITLAB_URL=https://gitlab.com
+	VITE_GITLAB_GROUP_ID=52
+	```
+4. **Run locally:**
+	```sh
+	npm run dev
+	```
+
+---
+
+## 🌐 Deployment
+
+- **GitHub Pages:**
+  - Push to `main` branch. GitHub Actions auto-builds and deploys to Pages.
+  - Configure your repo: Settings → Pages → Source: GitHub Actions.
+- **Other:**
+  - Deploy `dist/` to Vercel, Netlify, or your static host.
+
+---
+
+## 📄 License
+
+MIT. See [LICENSE](LICENSE).
+
+---
+
+© 2026 LightPxl. Open source on [GitHub](https://github.com/LightPxl/gitlab-tracker).
