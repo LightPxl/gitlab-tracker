@@ -179,7 +179,7 @@ export default function Landing() {
           <div className="linear-surface flex items-center justify-between rounded-full px-4 py-3">
             <Link to="/landing" className="flex items-center gap-3">
               <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-white shadow-[0_0_30px_rgba(111,91,255,0.15)] overflow-hidden">
-                <img src={logoUrl} alt="Logo" className="h-8 w-8 object-contain" />
+                <img src={logoUrl} alt="Logo" className="w-full h-full object-cover" />
               </div>
               <div>
                 <p className="text-sm font-semibold text-white">LightPxl</p>
