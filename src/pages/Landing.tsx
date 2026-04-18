@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, BarChart3, Command, GitBranch, ShieldCheck, Sparkles, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useCallback } from "react";
 
 const heroStats = [
   { label: "Pipeline success", value: "99.2%" },
@@ -154,9 +155,16 @@ function ProductPreview() {
       </div>
     </div>
   );
-}
 
-export default function Landing() {
+  // Smooth scroll handler for header links
+  const handleScroll = useCallback((e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
+
   return (
     <div className="linear-grid relative min-h-screen overflow-hidden bg-background text-foreground">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(110,86,255,0.16),transparent_32%),radial-gradient(circle_at_80%_20%,rgba(56,139,253,0.16),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.02),transparent_28%)]" />
@@ -172,8 +180,8 @@ export default function Landing() {
         >
           <div className="linear-surface flex items-center justify-between rounded-full px-4 py-3">
             <Link to="/landing" className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#6f5bff,#378aff)] shadow-[0_0_30px_rgba(111,91,255,0.35)]">
-                <GitBranch className="h-4 w-4 text-white" />
+              <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-white shadow-[0_0_30px_rgba(111,91,255,0.15)] overflow-hidden">
+                <img src="/logo.jpg" alt="Logo" className="h-8 w-8 object-contain" />
               </div>
               <div>
                 <p className="text-sm font-semibold text-white">LightPxl</p>
@@ -182,9 +190,9 @@ export default function Landing() {
             </Link>
 
             <div className="hidden items-center gap-8 text-sm text-white/58 md:flex">
-              <a href="#product" className="transition-colors hover:text-white">Product</a>
-              <a href="#features" className="transition-colors hover:text-white">Features</a>
-              <a href="#overview" className="transition-colors hover:text-white">Overview</a>
+              <a href="#product" className="transition-colors hover:text-white" onClick={e => handleScroll(e, "product")}>Product</a>
+              <a href="#features" className="transition-colors hover:text-white" onClick={e => handleScroll(e, "features")}>Features</a>
+              <a href="#overview" className="transition-colors hover:text-white" onClick={e => handleScroll(e, "overview")}>Overview</a>
             </div>
 
             <div className="flex items-center gap-3">
