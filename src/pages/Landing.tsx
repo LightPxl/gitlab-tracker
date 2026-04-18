@@ -171,7 +171,7 @@ export default function Landing() {
           className="sticky top-0 z-20 mb-10 pt-5"
         >
           <div className="linear-surface flex items-center justify-between rounded-full px-4 py-3">
-            <Link to="/" className="flex items-center gap-3">
+            <Link to="/landing" className="flex items-center gap-3">
               <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#6f5bff,#378aff)] shadow-[0_0_30px_rgba(111,91,255,0.35)]">
                 <GitBranch className="h-4 w-4 text-white" />
               </div>
