@@ -9,6 +9,7 @@ import { DashboardLayout } from "./components/layout/DashboardLayout";
 
 // Lazy Load Pages
 const Dashboard = lazy(() => import("./features/dashboard/DashboardPage"));
+const Landing = lazy(() => import("./pages/Landing"));
 const ProjectsPage = lazy(() => import("./features/projects/ProjectsPage"));
 const PipelinePage = lazy(() => import("./features/pipelines/PipelinesPage"));
 const ReportsPage = lazy(() => import("./features/reports/ReportsPage"));
