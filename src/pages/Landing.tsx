@@ -55,6 +55,7 @@ const fadeUp = {
   transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const },
 };
 
+
 function ProductPreview() {
   return (
     <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] p-3 shadow-[0_30px_120px_rgba(0,0,0,0.45)] backdrop-blur-xl">
@@ -69,7 +70,6 @@ function ProductPreview() {
             Live sync
           </div>
         </div>
-
         <div className="grid gap-3 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="space-y-3">
             <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-4">
@@ -92,7 +92,6 @@ function ProductPreview() {
                 ))}
               </div>
             </div>
-
             <div className="grid gap-3 sm:grid-cols-3">
               {heroStats.map((stat) => (
                 <div key={stat.label} className="rounded-2xl border border-white/8 bg-white/[0.03] p-4">
@@ -102,7 +101,6 @@ function ProductPreview() {
               ))}
             </div>
           </div>
-
           <div className="space-y-3">
             <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-4">
               <div className="flex items-center justify-between">
@@ -134,7 +132,6 @@ function ProductPreview() {
                 ))}
               </div>
             </div>
-
             <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-4">
               <p className="text-xs text-white/45">Recent activity</p>
               <div className="mt-4 space-y-3">
@@ -155,7 +152,8 @@ function ProductPreview() {
       </div>
     </div>
   );
-
+}
+export default function Landing() {
   // Smooth scroll handler for header links
   const handleScroll = useCallback((e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
