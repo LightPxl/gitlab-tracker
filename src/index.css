@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* tailwind-start */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* tailwind-end */
+
+/* Linear-inspired product surface system */
+
+@layer base {
+  :root {
+    --background: 240 19% 5%;
+    --foreground: 210 40% 98%;
+
+    --card: 240 16% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 240 16% 7%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 251 90% 68%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 240 12% 11%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 240 10% 11%;
+    --muted-foreground: 220 13% 63%;
+
+    --accent: 216 91% 64%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 11%;
+
+    --border: 240 9% 18%;
+    --input: 240 10% 11%;
+    --ring: 251 90% 68%;
+
+    --radius: 1rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(251 90% 68%) 0%, hsl(216 91% 64%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(240 16% 10% / 0.86) 0%, hsl(240 16% 8% / 0.7) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(160 84% 39%) 100%);
+    --gradient-warning: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(25 95% 53%) 100%);
+    --gradient-danger: linear-gradient(135deg, hsl(0 84% 60%) 0%, hsl(350 89% 60%) 100%);
+
+    --glass-bg: hsl(240 16% 10% / 0.66);
+    --glass-border: hsl(0 0% 100% / 0.08);
+    --glass-shadow: 0 20px 80px hsl(240 25% 3% / 0.45);
+
+    --chart-1: 251 90% 68%;
+    --chart-2: 216 91% 64%;
+    --chart-3: 142 76% 36%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 84% 60%;
+
+    --sidebar-background: 240 18% 7%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 251 90% 68%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 240 13% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 240 9% 16%;
+    --sidebar-ring: 251 90% 68%;
+  }
+
+  .light {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 187 85% 43%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 11%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 187 85% 43%;
+
+    --glass-bg: hsl(0 0% 100% / 0.7);
+    --glass-border: hsl(214 32% 91% / 0.5);
+    --glass-shadow: 0 8px 32px hsl(222 47% 11% / 0.1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 187 85% 43%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 187 85% 43%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    background-color: #0b0b0f;
+    background-image:
+      radial-gradient(circle at top, rgba(110, 86, 255, 0.12), transparent 30%),
+      radial-gradient(circle at 80% 10%, rgba(56, 139, 253, 0.1), transparent 22%);
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  ::selection {
+    background: rgba(110, 86, 255, 0.28);
+    color: white;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .linear-surface {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.02)),
+      rgba(15, 16, 23, 0.78);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.04),
+      0 24px 90px rgba(0, 0, 0, 0.35);
+  }
+
+  .linear-card-hover {
+    transition:
+      transform 220ms ease,
+      border-color 220ms ease,
+      background-color 220ms ease,
+      box-shadow 220ms ease;
+  }
+
+  .linear-card-hover:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.04),
+      0 24px 90px rgba(0, 0, 0, 0.45),
+      0 0 0 1px rgba(110, 86, 255, 0.06);
+  }
+
+  .linear-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 120px 120px;
+    background-position: center center;
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .metric-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+
+  .status-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .chart-gradient-primary {
+    fill: url(#gradientPrimary);
+  }
+
+  .hover-lift {
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 60px hsl(240 25% 3% / 0.45);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+}
